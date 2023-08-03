@@ -3,21 +3,25 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-let newString = prompt("Hello there, please type in your username");
+function AskForUserInput() {
+  // let userInput = "something new";
+  let userInput = prompt("What's on your mind?");
 
-function DisplayString(string) {
-  return string;
+  let heading = document.getElementById("heading");
+  console.log(heading);
+  heading.innerText = userInput;
+
+
 }
 
 function App() {
-
-  let string = DisplayString(newString);
+  let input = "hello there";
 
   return (
     <>
-      <h1>{string}</h1>
+      <h1 id="heading">Hello World</h1>
       <p>Let's get some React App up and running!</p>
-      <button>Click me</button>
+      <button onClick={AskForUserInput}>click me</button>
     </>
   )
 }
